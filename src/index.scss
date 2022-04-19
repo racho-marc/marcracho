@@ -1,0 +1,35 @@
+/* :root {
+    $primary: #000160;
+    $secondary: #AD8D00;
+    $info: #FACD0A;
+    $light: #2427FF;
+    $dark: #0A0EFA;
+} */
+
+body {
+    background-color: #000020;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.main {
+    min-height: 100vh;
+    margin-left: 300px;
+    background-color: #FFFFFF;    
+
+    section:nth-child(even) {
+        background-color: #F5F5F5;
+    }
+
+    .section-title {
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 4rem;
+            height: 3px;
+            background: #B58618;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
