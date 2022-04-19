@@ -13,8 +13,10 @@ body {
 
 .main {
     min-height: 100vh;
-    margin-left: 300px;
-    background-color: #FFFFFF;    
+    width: calc(100% - 300px);
+    transform: translateX(300px);
+    background-color: #FFFFFF;
+    transition: 0.5s ease-in;
 
     section:nth-child(even) {
         background-color: #F5F5F5;
@@ -31,5 +33,12 @@ body {
             bottom: 0;
             left: 0;
         }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main {
+        width: 100%;
+        transform: translateX(0);
     }
 }

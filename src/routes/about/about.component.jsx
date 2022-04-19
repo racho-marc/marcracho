@@ -2,8 +2,6 @@ import { Fragment } from "react";
 import Helmet from "react-helmet";
 import AboutMe from "../../components/about-me/about-me.component";
 
-import "./about.styles.scss";
-
 const About = () => {
     return (
         <Fragment>

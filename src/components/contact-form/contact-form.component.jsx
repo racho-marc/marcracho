@@ -1,59 +1,106 @@
 import { Form, Button, FloatingLabel } from "react-bootstrap";
-// import emailjs from '@emailjs/browser';
+import InputField from "../input-field/input-field.component";
+import emailjs from '@emailjs/browser';
+import { Fragment, useEffect, useState } from "react";
+import TextareaField from "../textarea-field/textarea-field.component";
 
 const ContactForm = () => {
-    // const form = useRef();
+    const [values, setValues] = useState({
+        fullName: '',
+        email: '',
+        subject: '',
+        message: '',
+    });
 
-    // const sendEmail = (e) => {
-    //     e.preventDefault();
+    const [status, setStatus] = useState(false);
 
-    //     emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-    //     .then((result) => {
-    //         console.log(result.text);
-    //     }, (error) => {
-    //         console.log(error.text);
-    //     });
-    // };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        emailjs.send('service_1go3tcb', 'template_jvbvl8l', values, 'KuUvKtCPSCJYh8b2s')
+            .then(response => {
+                console.log('Sent!', response.text);
+                setValues({
+                    fullName: '',
+                    email: '',
+                    subject: '',
+                    message: '',
+                });
+                setStatus(true)
+            }, error => {
+                console.log('Error sending email.', error.text);
+            });
+    };
+
+    useEffect(() => {
+        if(status){
+            setTimeout(() => {
+                setStatus(false);
+            }, 3000);
+        }
+    }, [status])
+
+    const handleChange = (e) => {
+        setValues(values=> ({
+            ...values,
+            [e.target.name]: e.target.value
+        }))
+    };
+
+    const renderAlert = () => (
+        <div>
+            <p className="text-white px-2 py-2 bg-success bg-gradient">Your message has been sent!</p>
+        </div>
+    )
 
     return (
-        <Form>                    
-            <FloatingLabel 
-                label="Name"
-                controlId="floatingNameInput"
-                className="mb-3"
-            >                        
-                <Form.Control type="text" placeholder="Enter your name" />                        
-            </FloatingLabel>                                        
-            <FloatingLabel
-                label="Email address"
-                controlId="floatingEmailInput"
-                className="mb-3" 
-            >
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">I'll never share your email with anyone else.</Form.Text>
-            </FloatingLabel>                                                                
-            <FloatingLabel
-                label="Subject"
-                controlId="floatingSubjectInput"
-                className="mb-3" 
-            >
-                <Form.Control type="text" placeholder="Enter a subject" />                        
-            </FloatingLabel>                                        
-            <FloatingLabel
-                label="Message"
-                controlId="floatingMessageInput"
-                className="mb-3"
-            >
-                <Form.Control 
-                    as="textarea" 
+        <Fragment>
+            {status && renderAlert()}
+            <Form onSubmit={handleSubmit}>                    
+                          
+                <InputField 
+                    handleChange={handleChange} 
+                    type="text" 
+                    name="fullName"
+                    label="Name"
+                    value={values.fullName}
+                    placeholder="Enter your name" 
+                    idName="floatingNameInput"    
+                />
+                <InputField 
+                    handleChange={handleChange} 
+                    type="email" 
+                    name="email"                    
+                    label="Email address"
+                    value={values.email}
+                    placeholder="Enter your email" 
+                    idName="floatingEmailInput"    
+                ><Form.Text className="text-muted">I'll never share your email with anyone else.</Form.Text></InputField>
+                
+                <InputField 
+                    handleChange={handleChange} 
+                    type="text" 
+                    name="subject"
+                    label="Subject"
+                    value={values.subject}
+                    placeholder="Enter a subject" 
+                    idName="floatingSubjectInput"    
+                />
+
+                <TextareaField 
+                    handleChange={handleChange}                     
+                    name="message"
+                    label="Message"
+                    value={values.message}
                     placeholder="Leave your message" 
-                    style={{ height: '300px' }}
-                /> 
-            </FloatingLabel>                    
-            <Button variant="primary" size="lg" type="submit">
-                Send
-            </Button>
-        </Form>
+                    idName="floatingMessageInput"
+                    height="300px" 
+                />                                      
+                <Button variant="primary" size="lg" type="submit">
+                    Send
+                </Button>
+            </Form>
+        </Fragment>
     )
 }
 

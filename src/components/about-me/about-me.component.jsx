@@ -18,15 +18,23 @@ const AboutMe = () => {
                             <h2 className="section-title pb-3 mb-5 position-relative">Experience</h2>
                             <ul className="list-unstyled ps-0">
                                 <li className="experience-info position-relative pb-4 ps-4 ms-2 border-start border-primary">
+                                    <h3 className="h5 lh-1 fw-bolder">Front-End Product Developer</h3>
+                                    <p><strong>Scorpion</strong> | Santa Clarita, CA / Remote | August 2021 - Current</p>
+                                    <ul className="details ps-3">
+                                        <li>Develop easily customizable website templates using our framework to use as starting points for client websites</li>
+                                        <li>Optimize website templates for speed and performance for mobile through desktop</li>                                        
+                                    </ul>
+                                </li>
+                                <li className="experience-info position-relative pb-4 ps-4 ms-2 border-start border-primary">
                                     <h3 className="h5 lh-1 fw-bolder">Senior Front-End Web Developer</h3>
-                                    <p><strong>Scorpion</strong> | Santa Clarita, CA / Remote | February 2013 - Current</p>
+                                    <p><strong>Scorpion</strong> | Santa Clarita, CA / Remote | February 2013 - August 2021</p>
                                     <ul className="details ps-3">
                                         <li>Collaborate with Designers, Marketing Managers, and Project Managers to produce high-converting marketing websites.</li>
                                         <li>Give Designers and Project Managers design recommendations for page speed improvements and better user experience.</li>
                                         <li>Convert PSD / XD designs into responsive and optimized HTML pages that follow ADA guideline.</li>
                                     </ul>
                                 </li>
-                                <li className="experience-info position-relative pb-4 ps-4 ms-2 border-start border-primary">
+                                <li className="experience-info position-relative ps-4 ms-2 border-start border-primary">
                                     <h3 className="h5 lh-1 fw-bolder">Front-End Web Developer</h3>
                                     <p><strong>Creative Circle</strong> | Los Angeles, CA | November 2012 - January 2013</p>
                                     <ul className="details ps-3">
@@ -66,11 +74,11 @@ const AboutMe = () => {
                                 </li>                            
                                 <li className="pb-3">
                                     <strong className="skill-title">SASS</strong>
-                                    <span className="skill-level level-4"></span>
+                                    <span className="skill-level level-3"></span>
                                 </li>
                                 <li className="pb-3">
                                     <strong className="skill-title">Bootstrap 5</strong>
-                                    <span className="skill-level level-4"></span>
+                                    <span className="skill-level level-3"></span>
                                 </li>
                                 <li className="pb-3">
                                     <strong className="skill-title">Amazon AWS</strong>
@@ -91,7 +99,7 @@ const AboutMe = () => {
                             <h2 className="section-title pb-3 mb-5 position-relative">Fun Facts</h2>
                             <ul>
                                 <li>I am obsessed with my dog. He is a 100-pound German Shepherd Mix named Bathala.</li>
-                                <li>I like to watch k-dramas, movies, and/or animes to relax.</li>
+                                <li>I like to watch K-dramas, movies, and/or animes to relax.</li>
                                 <li>I love learning programming languages. I am currently learning TypeScript.</li>
                                 <li>I play Magic the Gathering (EDH) when I have free time.</li>
                                 <li>I have developed a healthy habit of working out and eating right during the pandemic.</li>

@@ -1,4 +1,37 @@
 .header {
     width: 300px;
     background-color: #000020;
+    transition: transform 0.5s ease-in;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.mobile-nav-active .header {
+    transform: translateX(0);
+}
+
+.mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    border: 0;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    background-color: #003566;
+    color: #F5BA31;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .header {
+        transform: translateX(-300px);
+    }
 }

@@ -2,11 +2,12 @@ import ContactForm from "../../components/contact-form/contact-form.component";
 import { Fragment } from "react";
 import { Container } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+
 const Contact = () => {
     return (
         <Fragment>
             <Helmet>
-            <title>Marc Racho - About Me</title>
+            <title>Marc Racho - Contact Me</title>
                 <meta 
                     name="description"
                     content="Marc Racho - Contact Me"
