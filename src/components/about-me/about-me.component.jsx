@@ -1,5 +1,9 @@
 import { Container } from "react-bootstrap";
 
+import badgeSA from "../../assets/aws-certified-solutions-architect-associate.png";
+import badgeCP from "../../assets/aws-certified-cloud-practitioner.png";
+
+
 import "./about-me.styles.scss";
 
 const AboutMe = () => {
@@ -93,7 +97,26 @@ const AboutMe = () => {
                             <h3 className="h4">Bachelor of Science in Information Technology</h3>
                             <p><strong>AMA Computer University | Quezon City, Philippines</strong></p>
                         </Container>
-                    </section>     
+                    </section>
+                    <section>
+                        <Container className="inner-wrap p-5">
+                            <h2 className="section-title pb-3 mb-5 position-relative">Certification</h2>
+                            <div className="d-flex">
+                                <div className="badge text-center me-5">
+                                    <h3 className="h4"><a className="text-decoration-none" href="https://www.credly.com/badges/fa49d4a7-6cfd-4e8d-bedf-77f53d17c45e/public_url" target="_blank">AWS Certified Solutions Architect</a></h3>
+                                    <a href="https://www.credly.com/badges/fa49d4a7-6cfd-4e8d-bedf-77f53d17c45e/public_url" target="_blank">
+                                        <img src={badgeSA} />
+                                    </a>
+                                </div>
+                                <div className="badge text-center">
+                                    <h3 className="h4"><a className="text-decoration-none" href="https://www.credly.com/badges/1d8f5dcf-d294-48cf-a8ae-d5d982291044/public_url" target="_blank">AWS Certified Cloud Practitioner</a></h3>
+                                    <a href="https://www.credly.com/badges/1d8f5dcf-d294-48cf-a8ae-d5d982291044/public_url" target="_blank">
+                                        <img src={badgeCP} />
+                                    </a>
+                                </div>
+                            </div>    
+                        </Container>
+                    </section> 
                     <section>
                         <Container className="inner-wrap p-5">
                             <h2 className="section-title pb-3 mb-5 position-relative">Fun Facts</h2>
