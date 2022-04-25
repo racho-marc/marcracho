@@ -13,8 +13,7 @@ const AboutMe = () => {
                     <section>
                         <Container className="inner-wrap p-5">
                             <h1 className="section-title pb-3 mb-5 position-relative">About Me</h1>
-                            <p>I'm a Senior Front-End Web Developer with over nine years of experience in the design, planning, and implementation of award-winning, user-friendly, and ADA-compliant websites. I am quick to adapt to new                    
-        technology, global standards, and best practices in web development to give our clients and their users the best experience online. I am also very passionate about modern code and new technology.</p>
+                            <p>I'm a Senior Front-End Web Developer with over nine years of experience in the design, planning, and implementation of award-winning, user-friendly, and ADA-compliant websites. I quickly adapt to new technology, global standards, and best practices in web development to give our clients and their users the best experience online. I am also very passionate about modern code and new technology.</p>
                         </Container>
                     </section>
                     <section className=" experience">
@@ -33,16 +32,17 @@ const AboutMe = () => {
                                     <h3 className="h5 lh-1 fw-bolder">Senior Front-End Web Developer</h3>
                                     <p><strong>Scorpion</strong> | Santa Clarita, CA / Remote | February 2013 - August 2021</p>
                                     <ul className="details ps-3">
-                                        <li>Collaborate with Designers, Marketing Managers, and Project Managers to produce high-converting marketing websites.</li>
-                                        <li>Give Designers and Project Managers design recommendations for page speed improvements and better user experience.</li>
-                                        <li>Convert PSD / XD designs into responsive and optimized HTML pages that follow ADA guideline.</li>
+                                        <li>Collaborate with Designers, Project Managers, Marketing Managers, and Back-End Developers to produce high-converting marketing websites.</li>
+                                        <li>Give Designers and Project Managers design recommendations for page speed, web performance improvements, and better user experience.</li>
+                                        <li>Convert PSD / XD designs into responsive and optimized HTML pages that follow ADA guidelines.</li>
                                     </ul>
                                 </li>
                                 <li className="experience-info position-relative ps-4 ms-2 border-start border-primary">
                                     <h3 className="h5 lh-1 fw-bolder">Front-End Web Developer</h3>
                                     <p><strong>Creative Circle</strong> | Los Angeles, CA | November 2012 - January 2013</p>
                                     <ul className="details ps-3">
-                                        <li>Convert PSD designs into working responsive HTML pages.</li>                                    
+                                        <li>Converted PSD designs into working responsive HTML pages.</li>                                    
+                                        <li>Collaborated with Back-End Developers to ensure completed HTML pages can easily be integrated with PHP code.</li>
                                     </ul>
                                 </li>
                             </ul>
