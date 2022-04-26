@@ -13,6 +13,10 @@
     }
 }
 
+.skills.show .skill-level:after {
+    transform: scale(1, 1);
+}
+
 .skills-list {
 
     li {
@@ -36,17 +40,14 @@
     .skill-level:after {
         background-color: #F5BA31;
         content: '';
+        border-radius: 2.5px;
         height: 100%;
         left: 0;
         position: absolute;
         top: 0;
-        transform: scale(1, 1);
+        transform: scale(0, 1);
         transform-origin: left center;
         transition: 1.5s ease-in;
-    }
-
-    .skills.show .skill-level:after {
-        transform: scale(1, 1);
     }
 
     .level-5:after {
@@ -115,5 +116,27 @@
 
     li:last-child .skill-level:after {
         transition-delay: 2.5s;
+    }
+}
+
+.certification {}
+
+@media screen and (max-width: 800px) {
+    .skills-list li {
+        width: 48%
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .skills-list li {
+        width: 100%
+    }
+
+    .cert-wrap .w-50 {
+        width: 100% !important;
+    }
+
+    .cert-wrap .w-50:not(:first-child) {
+        margin-top: 2rem;
     }
 }

@@ -1,3 +1,4 @@
+import React, { createRef, Component } from "react";
 import { Container } from "react-bootstrap";
 
 import badgeSA from "../../assets/aws-certified-solutions-architect-associate.png";
@@ -6,17 +7,54 @@ import badgeCP from "../../assets/aws-certified-cloud-practitioner.png";
 
 import "./about-me.styles.scss";
 
-const AboutMe = () => {
-    return (
+
+
+//const AboutMe = () => {
+class AboutMe extends Component {
+    // const skillsSection = useRef(null);
+    // const [scroll, setScroll] = useState(false);
+    // console.log(skillsSection.current);
+    // //useEffect(() => {
+    //     window.addEventListener("scroll", () => {
+    //         setScroll(window.scrollY > skillsSection.current.scrollY);
+    //     }, [scroll]);
+    // //})
+    constructor(props) {
+        super(props);
+        this.skillsSection = createRef();
+        this.aboutMeHeader = createRef();
+        this.experienceSection = createRef();
+        this.state = {
+            scroll: false            
+        };
+    }
+
+    componentDidMount(){
+        window.addEventListener('scroll', () => {
+            let activeClass = '';
+            //let offsetValue = (this.skillsSection.current.offsetTop - (this.aboutMeHeader.current.clientHeight + this.experienceSection.current.clientHeight)/1.5 )
+            let offsetValue = this.skillsSection.current.offsetTop / 3;
+            // console.table(window.scrollY, offsetValue );
+            if(window.scrollY >  offsetValue){
+                activeClass = 'show';
+            }
+            this.setState({ activeClass });
+        });
+    }
+
+    // componentWillUnmount() { window.removeEventListener('scroll'); } 
+
+    render() {
+        return (
         <main className="about main text-dark position-relative">                
                 
-                    <section>
+                    <section ref={this.aboutMeHeader}>
                         <Container className="inner-wrap p-5">
                             <h1 className="section-title pb-3 mb-5 position-relative">About Me</h1>
                             <p>I'm a Senior Front-End Web Developer with over nine years of experience in the design, planning, and implementation of award-winning, user-friendly, and ADA-compliant websites. I quickly adapt to new technology, global standards, and best practices in web development to give our clients and their users the best experience online. I am also very passionate about modern code and new technology.</p>
                         </Container>
                     </section>
-                    <section className=" experience">
+                    <section ref={this.experienceSection} className=" experience">
                         <Container className="inner-wrap p-5">
                             <h2 className="section-title pb-3 mb-5 position-relative">Experience</h2>
                             <ul className="list-unstyled ps-0">
@@ -48,7 +86,7 @@ const AboutMe = () => {
                             </ul>
                         </Container>
                     </section>
-                    <section>
+                    <section ref={this.skillsSection} className={`skills ${this.state.activeClass}`}>
                         <Container className="inner-wrap p-5">
                             <h2 className="section-title pb-3 mb-5 position-relative">Skills</h2>
                             <ul className="list-unstyled skills-list d-flex justify-content-between flex-wrap">
@@ -98,17 +136,17 @@ const AboutMe = () => {
                             <p><strong>AMA Computer University | Quezon City, Philippines</strong></p>
                         </Container>
                     </section>
-                    <section>
+                    <section className="certification">
                         <Container className="inner-wrap p-5">
                             <h2 className="section-title pb-3 mb-5 position-relative">Certification</h2>
-                            <div className="d-flex">
-                                <div className="badge text-center me-5">
+                            <div className="cert-wrap d-flex justify-content-between flex-wrap">
+                                <div className="w-50 text-center">
                                     <h3 className="h4"><a className="text-decoration-none" href="https://www.credly.com/badges/fa49d4a7-6cfd-4e8d-bedf-77f53d17c45e/public_url" target="_blank">AWS Certified Solutions Architect</a></h3>
                                     <a href="https://www.credly.com/badges/fa49d4a7-6cfd-4e8d-bedf-77f53d17c45e/public_url" target="_blank">
                                         <img src={badgeSA} />
                                     </a>
                                 </div>
-                                <div className="badge text-center">
+                                <div className="w-50 text-center">
                                     <h3 className="h4"><a className="text-decoration-none" href="https://www.credly.com/badges/1d8f5dcf-d294-48cf-a8ae-d5d982291044/public_url" target="_blank">AWS Certified Cloud Practitioner</a></h3>
                                     <a href="https://www.credly.com/badges/1d8f5dcf-d294-48cf-a8ae-d5d982291044/public_url" target="_blank">
                                         <img src={badgeCP} />
@@ -131,7 +169,7 @@ const AboutMe = () => {
                         </Container>
                     </section> 
             </main>
-    )
+    )}
 }
 
 export default AboutMe;
