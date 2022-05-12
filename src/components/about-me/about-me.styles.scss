@@ -18,9 +18,15 @@
 }
 
 .skills-list {
+    display: grid;
+    gap: 2rem;
 
-    li {
-        width: 31%;
+    @media screen and (min-width: 992px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
     }
 
     .skill-title {
@@ -121,17 +127,9 @@
 
 .certification {}
 
-@media screen and (max-width: 800px) {
-    .skills-list li {
-        width: 48%
-    }
-}
+@media screen and (max-width: 800px) {}
 
 @media screen and (max-width: 500px) {
-    .skills-list li {
-        width: 100%
-    }
-
     .cert-wrap .w-50 {
         width: 100% !important;
     }

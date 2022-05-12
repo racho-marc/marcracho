@@ -87,9 +87,9 @@ class AboutMe extends Component {
                         </Container>
                     </section>
                     <section ref={this.skillsSection} className={`skills ${this.state.activeClass}`}>
-                        <Container className="inner-wrap p-5">
+                        <Container className="inner-wrap p-5 container">
                             <h2 className="section-title pb-3 mb-5 position-relative">Skills</h2>
-                            <ul className="list-unstyled skills-list d-flex justify-content-between flex-wrap">
+                            <ul className="list-unstyled skills-list">
                                 <li className="pb-3">
                                     <strong className="skill-title">HTML5</strong>
                                     <span className="skill-level level-5"></span>
@@ -113,7 +113,11 @@ class AboutMe extends Component {
                                 <li className="pb-3">
                                     <strong className="skill-title">React JS</strong>
                                     <span className="skill-level level-4"></span>
-                                </li>                            
+                                </li>      
+                                <li className="pb-3">
+                                    <strong className="skill-title">TypeScript</strong>
+                                    <span className="skill-level level-3"></span>
+                                </li>                      
                                 <li className="pb-3">
                                     <strong className="skill-title">SASS</strong>
                                     <span className="skill-level level-3"></span>
@@ -124,6 +128,10 @@ class AboutMe extends Component {
                                 </li>
                                 <li className="pb-3">
                                     <strong className="skill-title">Amazon AWS</strong>
+                                    <span className="skill-level level-3"></span>
+                                </li>
+                                <li className="pb-3">
+                                    <strong className="skill-title">SQL</strong>
                                     <span className="skill-level level-3"></span>
                                 </li>
                             </ul>
