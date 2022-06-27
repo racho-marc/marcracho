@@ -1,4 +1,4 @@
-import React, { createRef, Component } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 
 import badgeSA from "../../assets/aws-certified-solutions-architect-associate.png";
@@ -7,54 +7,27 @@ import badgeCP from "../../assets/aws-certified-cloud-practitioner.png";
 
 import "./about-me.styles.scss";
 
-
-
-//const AboutMe = () => {
-class AboutMe extends Component {
-    // const skillsSection = useRef(null);
-    // const [scroll, setScroll] = useState(false);
-    // console.log(skillsSection.current);
-    // //useEffect(() => {
-    //     window.addEventListener("scroll", () => {
-    //         setScroll(window.scrollY > skillsSection.current.scrollY);
-    //     }, [scroll]);
-    // //})
-    constructor(props) {
-        super(props);
-        this.skillsSection = createRef();
-        this.aboutMeHeader = createRef();
-        this.experienceSection = createRef();
-        this.state = {
-            scroll: false            
-        };
-    }
-
-    componentDidMount(){
-        window.addEventListener('scroll', () => {
-            let activeClass = '';
-            //let offsetValue = (this.skillsSection.current.offsetTop - (this.aboutMeHeader.current.clientHeight + this.experienceSection.current.clientHeight)/1.5 )
-            let offsetValue = this.skillsSection.current.offsetTop / 3;
-            // console.table(window.scrollY, offsetValue );
-            if(window.scrollY >  offsetValue){
-                activeClass = 'show';
-            }
-            this.setState({ activeClass });
+const AboutMe = () => {
+    const skillsSection = useRef();
+    const [skillsVisible, setSkillsVisible] = useState(false)
+    useEffect(() => {
+        const skillsObserver = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            setSkillsVisible(entry.isIntersecting);
         });
-    }
 
-    // componentWillUnmount() { window.removeEventListener('scroll'); } 
+        skillsObserver.observe(skillsSection.current);
+    });
 
-    render() {
-        return (
+    return (
         <main className="about main text-dark position-relative">                
-                
-                    <section ref={this.aboutMeHeader}>
+                    <section>
                         <Container className="inner-wrap p-5">
                             <h1 className="section-title pb-3 mb-5 position-relative">About Me</h1>
                             <p>I'm a Senior Front-End Web Developer with over nine years of experience in the design, planning, and implementation of award-winning, user-friendly, and ADA-compliant websites. I quickly adapt to new technology, global standards, and best practices in web development to give our clients and their users the best experience online. I am also very passionate about modern code and new technology.</p>
                         </Container>
                     </section>
-                    <section ref={this.experienceSection} className=" experience">
+                    <section className=" experience">
                         <Container className="inner-wrap p-5">
                             <h2 className="section-title pb-3 mb-5 position-relative">Experience</h2>
                             <ul className="list-unstyled ps-0">
@@ -86,7 +59,7 @@ class AboutMe extends Component {
                             </ul>
                         </Container>
                     </section>
-                    <section ref={this.skillsSection} className={`skills ${this.state.activeClass}`}>
+                    <section ref={skillsSection} className={skillsVisible ? `skills show` : `skills`}>
                         <Container className="inner-wrap p-5 container">
                             <h2 className="section-title pb-3 mb-5 position-relative">Skills</h2>
                             <ul className="list-unstyled skills-list">
@@ -176,8 +149,8 @@ class AboutMe extends Component {
                             </ul>
                         </Container>
                     </section> 
-            </main>
-    )}
-}
+        </main>
+    );
+};
 
 export default AboutMe;
