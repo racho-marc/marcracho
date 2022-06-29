@@ -1,0 +1,80 @@
+.experience {
+    .experience-info {
+        transition: opacity 0.4s ease-in;
+        opacity: 0;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0rem;
+            left: -0.6rem;
+            border-radius: 50%;
+            border: 2px solid #001d3d;
+            width: 20px;
+            height: 20px;
+            background-color: #FFFFFF;
+            z-index: 2;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: -1px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #001d3d;
+            transform-origin: top center;
+            transition: transform 1s;
+            transform: scale(1, 0);
+            z-index: 1;
+        }
+
+
+    }
+
+    &.show {
+        .experience-info {
+            opacity: 1;
+
+            &:after {
+                transform: scale(1, 1);
+            }
+
+            &:first-child {
+                transition-delay: 0.3s;
+
+                &:after {
+                    transition-delay: 0.5s;
+                }
+            }
+
+            &:nth-child(2) {
+                transition-delay: 1.5s;
+
+                &:after {
+                    transition-delay: 1.7s;
+                }
+            }
+
+            &:nth-child(3) {
+                transition-delay: 2.7s;
+
+                &:after {
+                    transition-delay: 2.9s;
+                }
+            }
+
+            &:last-child {
+                transition-delay: 3.9s;
+
+                &:after {
+                    transition-delay: 4.1s;
+                }
+            }
+
+        }
+    }
+
+
+}

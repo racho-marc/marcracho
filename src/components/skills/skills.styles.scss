@@ -1,0 +1,111 @@
+.skills.show .skill-level:after {
+    transform: scale(1, 1);
+}
+
+.skills-list {
+    display: grid;
+    gap: 2rem;
+
+    @media screen and (min-width: 992px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skill-title {
+        font-size: 1.25rem;
+    }
+
+    .skill-level {
+        display: block;
+        height: 5px;
+        border-radius: 2.5px;
+        background-color: #FFFFFF;
+        position: relative;
+        overflow: hidden;
+        margin-top: 0.7rem;
+    }
+
+    .skill-level:after {
+        background-color: #F5BA31;
+        content: '';
+        border-radius: 2.5px;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: scale(0, 1);
+        transform-origin: left center;
+        transition: 1.5s ease-in;
+    }
+
+    .level-5:after {
+        width: 100%;
+    }
+
+    .level-4:after {
+        width: 80%;
+    }
+
+    .level-3:after {
+        width: 60%;
+    }
+
+    .level-2:after {
+        width: 40%;
+    }
+
+    .level-1:after {
+        width: 20%;
+    }
+
+    li:first-child .skill-level:after {
+        transition-delay: 0.3s;
+    }
+
+    li:nth-child(2) .skill-level:after {
+        transition-delay: 0.5s;
+    }
+
+    li:nth-child(3) .skill-level:after {
+        transition-delay: 0.7s;
+    }
+
+    li:nth-child(4) .skill-level:after {
+        transition-delay: 0.9s;
+    }
+
+    li:nth-child(5) .skill-level:after {
+        transition-delay: 1.1s;
+    }
+
+    li:nth-child(6) .skill-level:after {
+        transition-delay: 1.3s;
+    }
+
+    li:nth-child(7) .skill-level:after {
+        transition-delay: 1.5s;
+    }
+
+    li:nth-child(8) .skill-level:after {
+        transition-delay: 1.7s;
+    }
+
+    li:nth-child(9) .skill-level:after {
+        transition-delay: 1.9s;
+    }
+
+    li:nth-child(10) .skill-level:after {
+        transition-delay: 2.1s;
+    }
+
+    li:nth-child(11) .skill-level:after {
+        transition-delay: 2.3s;
+    }
+
+    li:last-child .skill-level:after {
+        transition-delay: 2.5s;
+    }
+}
