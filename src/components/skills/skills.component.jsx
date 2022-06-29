@@ -17,10 +17,10 @@ const Skills = () => {
     },  []);
     
   return (
-    <section ref={skillsSection} className={skillsVisible ? `skills show` : `skills`}>    
+    <section className="skills">    
         <Container className="inner-wrap p-5 container">
             <h2 className="section-title pb-3 mb-5 position-relative">Skills</h2>
-            <ul className="list-unstyled skills-list">
+            <ul ref={skillsSection} className={skillsVisible ? `list-unstyled skills-list show` : `list-unstyled skills-list`}>
                 <li className="pb-3">
                     <strong className="skill-title">HTML5</strong>
                     <span className="skill-level level-5"></span>

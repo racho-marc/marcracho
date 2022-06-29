@@ -1,21 +1,22 @@
-.skills.show .skill-level:after {
-    transform: scale(1, 1);
-}
-
 .skills-list {
     display: grid;
     gap: 2rem;
 
     @media screen and (min-width: 992px) {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 991px) {
         grid-template-columns: 1fr 1fr;
+
     }
 
     .skill-title {
         font-size: 1.25rem;
+
+        @media screen and (max-width: 991px) {
+            font-size: 1.05rem;
+        }
     }
 
     .skill-level {
@@ -107,5 +108,9 @@
 
     li:last-child .skill-level:after {
         transition-delay: 2.5s;
+    }
+
+    &.show .skill-level:after {
+        transform: scale(1, 1);
     }
 }
